@@ -113,11 +113,10 @@ def streamed_response():
     # return Response(stream_with_context(upload()))
     return None
 
-
+check_models_exist()
+parser = ChefkochParser()
+predict_food_result = PredictFood(k=20)
 if __name__ == '__main__':
-    check_models_exist()
-    parser = ChefkochParser()
-    predict_food_result = PredictFood(k=20)
     #logger = LogFood(path='meta/log_food.json')
     app.run(host='0.0.0.0', port=5042, debug=False)
 
